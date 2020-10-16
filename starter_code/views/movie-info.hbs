@@ -9,24 +9,30 @@
 
 <body>
     <h1>Movie screening times</h1>
-    {{#with movieObject}}
-    <h2>Title: {{this.title}}</h2>
-    <img src="{{image}}" alt="movie poster">
-    <h3>Starring:</h3>
-    <ul>
-        {{#each stars}}
-        <li>{{this.stars}}</li>
-        {{/each}}
-    </ul>
+    <div class="movie-object-div">
+        {{#with movieObject}}
+        <img src="{{image}}" alt="movie poster">
+        <div class="movie-info-box">
+            <h2>{{this.title}}</h2>
+            <h3>Starring:</h3>
+            <ul>
+                {{#each stars}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
 
-    <h3>Director: {{director}}</h3>
-    <p>Screening times:
-        {{#each showtimes}}
-        <li>{{this}}</li>
-        {{/each}}
-    </p>
-    <p>{{this.description}}</p>
-    {{/with}}
+            <h3>Director: {{director}}</h3>
+            <p>Screening times:
+            <ul>
+                {{#each showtimes}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            </p>
+            <p>{{this.description}}</p>
+        </div>
+        {{/with}}
+    </div>
 </body>
 
 </html>

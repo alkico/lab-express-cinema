@@ -1,13 +1,16 @@
-<h1>Iron Cinema</h1>
-<h2>Click on the movie to check the screening times!</h2>
+<h2 style="font-weight: bold;">Iron Cinema</h2>
+<h4>Click on the movie to check the screening times!</h4>
 
-<div class="movie-container">
+<div class="movies-container">
+
     {{#each movieList}}
-    <p>{{title}}</p>
-    <!--with or without this, both work -->
-    <img src="{{this.image}}" alt=" movie image">
-    <!--Images not showing up in database and not rendering in browser but I don't get why-->
-    <a href=/movies/{{this._id}}>See movie</a>
+
+    <div class="movie-grid-item">
+        <img src="{{this.image}}" alt=" movie image">
+        <p>{{title}}</p>
+        <a href=/movies/{{this._id}}>See more</a>
+    </div>
+
     {{/each}}
 
 </div>
